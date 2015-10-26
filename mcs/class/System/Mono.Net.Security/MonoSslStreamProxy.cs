@@ -86,7 +86,7 @@ namespace Mono.Net.Security
 
 		static MonoTlsProvider GetProvider ()
 		{
-			return MonoTlsProviderFactory.GetDefaultProvider ();
+			return new Private.MonoDefaultTlsProvider ();
 		}
 
 		public MonoSslStreamProxy (Stream innerStream)
