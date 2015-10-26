@@ -111,8 +111,8 @@ namespace Mono.Net.Security
 		{
 			var provider = GetProvider ();
 			var settings = new MonoTlsSettings ();
-			settings.ServerCertificateValidationCallback = CallbackHelpers.PublicToMono (userCertificateValidationCallback);
-			settings.ClientCertificateSelectionCallback = CallbackHelpers.PublicToMono (userCertificateSelectionCallback);
+			settings.ServerCertificateValidationCallback = Private.CallbackHelpers.PublicToMono (userCertificateValidationCallback);
+			settings.ClientCertificateSelectionCallback = Private.CallbackHelpers.PublicToMono (userCertificateSelectionCallback);
 			impl = provider.CreateSslStream (innerStream, leaveInnerStreamOpen, settings);
 		}
 
