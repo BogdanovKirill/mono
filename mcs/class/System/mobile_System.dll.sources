@@ -358,6 +358,7 @@ Mono.Net.Security/MonoSslStreamImpl.cs
 Mono.Net.Security/MonoSslStreamWrapper.cs
 Mono.Net.Security/MonoTlsProviderFactory.cs
 Mono.Net.Security/MonoTlsProviderImpl.cs
+Mono.Net.Security/MonoTlsProviderProxy.cs
 Mono.Net.Security/MonoTlsProviderWrapper.cs
 Mono.Net.Security/MonoTlsStream.cs
 Mono.Net.Security/NoReflectionHelper.cs
