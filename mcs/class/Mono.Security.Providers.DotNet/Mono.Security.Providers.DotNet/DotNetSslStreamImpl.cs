@@ -34,14 +34,15 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.Security.Cryptography;
 using Mono.Security.Interface;
+using Mono.Net.Security;
 
 namespace Mono.Security.Providers.DotNet
 {
 	class DotNetSslStreamImpl : MonoSslStream
 	{
-		SslStream impl;
+		MonoSslStreamProxy impl;
 
-		internal SslStream Impl {
+		internal MonoSslStreamProxy Impl {
 			get {
 				CheckDisposed ();
 				return impl;
@@ -53,7 +54,7 @@ namespace Mono.Security.Providers.DotNet
 			RemoteCertificateValidationCallback userCertificateValidationCallback,
 			LocalCertificateSelectionCallback userCertificateSelectionCallback)
 		{
-			impl = new SslStream (
+			impl = new MonoSslStreamProxy (
 				innerStream, leaveInnerStreamOpen,
 				userCertificateValidationCallback,
 				userCertificateSelectionCallback);
