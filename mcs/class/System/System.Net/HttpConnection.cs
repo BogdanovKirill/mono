@@ -214,6 +214,11 @@ namespace System.Net {
 			}
 			return o_stream;
 		}
+		
+		public ResponseStream GetResponseStreamInternal()
+		{
+			return new ResponseStream (stream, context.Response, true);
+		}
 
 		static void OnRead (IAsyncResult ares)
 		{
